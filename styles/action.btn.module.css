@@ -1,0 +1,29 @@
+.button {
+  color: white;
+  background: black;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  padding: 20px 0;
+  border-radius: 10px;
+  margin: 0 auto;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.button:hover {
+  color: black;
+  background: #dedede;
+}
+
+@media (min-width: 720px) {
+  .button {
+    display: none;
+    cursor: pointer;
+  }
+}

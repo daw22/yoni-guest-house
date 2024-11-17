@@ -1,0 +1,65 @@
+.container {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: sticky;
+  z-index: 1;
+}
+
+.container div {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 40px;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav li {
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.nav li:hover {
+  color: gold;
+}
+
+.bookBtn {
+  outline: none;
+  border: none;
+  background: black;
+  color: white;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+.bookBtn:hover {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 720px) {
+  .bookBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 455px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav li{
+    margin-right: 10px;
+  }
+}

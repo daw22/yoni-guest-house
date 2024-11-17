@@ -1,0 +1,46 @@
+.container {
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  margin-top: 40px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.left h3 {
+  padding-left: 10px;
+  margin: 30px 0 20px 0;
+}
+.left div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.left div img {
+  margin-right: 5px;
+}
+.left img {
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+.socialMediaIcon {
+  width: 32px;
+  height: 32px;
+  margin: 10px 30px;
+  cursor: pointer;
+}
+
+.socialMediaIcon:hover{
+  scale: 1.5;
+}
+
+@media (max-width: 580px) {
+  .container {
+    flex-direction: column;
+  }
+}

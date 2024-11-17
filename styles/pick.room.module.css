@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.roomsListContainer{
+  display: "relative";
+  align-self: flex-start;
+  margin: 0 auto;
+}
+
+.roomsListContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  place-items: center;
+}
+
+@media (max-width: 680px) {
+  .roomsListContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .roomsListContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.roomCard {
+  background-color: #202325;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.roomCard:hover {
+  scale: 1.05;
+}
+
+.roomCard img{
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.roomCard input{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.roomCard p{
+  padding: 0 10px;
+}
+.roomDetailsButton {
+  padding: 5px 10px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0 10px 0;
+}
+
+.checkoutButton {
+  background: green;
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+  position: fixed;
+  bottom: 0;
+}
+
+.checkoutButton:disabled{
+  background: #ccc;
+  color: #000;
+  cursor: not-allowed;
+}
+.noRooms{
+  text-align: center;
+  margin: 40px;
+}

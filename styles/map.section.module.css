@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.container iframe {
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+  display: block;
+}
