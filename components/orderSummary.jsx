@@ -15,7 +15,6 @@ function OrderSummary({checkin, checkout, singles, doubles, totalPrice, setShowO
       from: checkin,
       to: checkout,
     }
-    console.log(bookingData);
     // send data to backend
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/rooms/book`, {
       method: 'POST',
@@ -28,18 +27,15 @@ function OrderSummary({checkin, checkout, singles, doubles, totalPrice, setShowO
         console.log('Booking response:', res.status);
         throw new Error('Failed to book');
       }
-      console.log('Booking response:', res);
       return res.json();
     })
     .then(data => {
-      console.log('Booking successful:', data);
       // console.log('data.payment_url', data.payment_url);
       window.location.href = data.payment_url;
     })
     .catch(error => {
       alert("Failed to book, Try again later");
       setDisableBtn(false);
-      console.error('Error booking:', error);
     });
   }
   return (

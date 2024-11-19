@@ -18,7 +18,6 @@ function RoomDetail() {
   const getRoomData = async () => {
     const roomData = searchParams.get('roomData');
     if (!roomData) {
-      console.error('No room data found in URL');
       return;
     }
     try {

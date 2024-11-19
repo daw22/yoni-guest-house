@@ -39,7 +39,6 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
       })
       .catch(err => {
         setPlaceHolder("No Rooms Found");
-        console.log('error:', err);
       });
     } else {
       //just navigate to booking page
@@ -89,7 +88,6 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         defaultValue={roomtype}
         onChange={(e) => {
           setRoomtype(e.target.value);
-          setSelectedRooms && setSelectedRooms([]);
         }}>
           <option value="single">single bed</option>
           <option value="double">double bed</option>

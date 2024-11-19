@@ -18,9 +18,6 @@ function PickRoom({ setRooms, rooms, checkin, checkout, roomtype, placeHolder, s
     for (let i = 0; i < selectedRooms.length; i++) {
       total += parseInt(selectedRooms[i].price_per_night) * numberOfDays;
     }
-    console.log("from:", from, "to:", to);
-    console.log("selected number of days:", numberOfDays);
-    console.log("total price:",total);
     return total;
   }
 

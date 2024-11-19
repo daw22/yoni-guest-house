@@ -85,6 +85,12 @@
   cursor: pointer;
   width: 50%;
 }
+
+.confirmButton:disabled{
+  background: gray;
+  cursor: not-allowed;
+}
+
 .cancelButton{ 
   background: red;
   color: white;

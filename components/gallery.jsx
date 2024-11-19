@@ -19,7 +19,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import '@/styles/swiper.css';
-// import required modules
 import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
 
 export default function Gallery() {

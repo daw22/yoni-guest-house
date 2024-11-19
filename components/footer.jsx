@@ -14,10 +14,6 @@ function Footer() {
 	  				<img src='/phone.svg' alt='phone icon' />
 	  				<span>+251 911728635</span>
 					</div>
-					<div>
-	  				<img src='/mail.svg' alt='phone icon' />
-	  				<span>info@yoniguesthouse.com</span>
-					</div>
 					<div className={style.socialMediaIconsContainer}>
 	  				<a href="">
 							<img className={style.socialMediaIcon} src='/telegram.svg' alt='telegram' />	
@@ -35,7 +31,7 @@ function Footer() {
   				
     	</div>
 			<div >
-					<p>Ethiopia, Debre Brehan</p>
+					<p>Ethiopia, Debre Brihan</p>
       		<p>copyright @2024</p> 
       </div>
 		</div>
