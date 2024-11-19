@@ -47,7 +47,9 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
   };
   
   useEffect(() => {
-    onSearchClicked();
+    if(inForm){
+      onSearchClicked();
+    }
   }, [checkin, checkout, roomtype]);
 
   return (
