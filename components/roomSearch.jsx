@@ -65,6 +65,9 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
           setCheckout(addDate(new Date(e.target.value), 1));
           setTo(addDate(new Date(e.target.value), 1));
           setSelectedRooms && setSelectedRooms([]);
+          setTimeout(() => {
+            onSearchClicked();
+          }, 500);
           }}/>
       </div>
       <div className={style.section}>
@@ -78,6 +81,9 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
           setCheckout(e.target.value);
           setTo(e.target.value);
           setSelectedRooms && setSelectedRooms([]);
+          setTimeout(() => {
+            onSearchClicked();
+          }, 500);
         }}
         ref={checkoutRef}
         />
@@ -88,6 +94,9 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         defaultValue={roomtype}
         onChange={(e) => {
           setRoomtype(e.target.value);
+          setTimeout(() => {
+            onSearchClicked();
+          }, 500);
         }}>
           <option value="single">single bed</option>
           <option value="double">double bed</option>
