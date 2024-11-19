@@ -2,7 +2,7 @@
 import style from '@/styles/search.module.css';
 import { FaSearch } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHolder, setFrom, setTo, setSelectedRooms}) {
   const router = useRouter();
@@ -46,6 +46,10 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
     }
   };
   
+  useEffect(() => {
+    onSearchClicked();
+  }, [checkin, checkout, roomtype]);
+
   return (
     <div className={style.container}>
       <div className={style.inputsContainer}>
@@ -65,9 +69,6 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
           setCheckout(addDate(new Date(e.target.value), 1));
           setTo(addDate(new Date(e.target.value), 1));
           setSelectedRooms && setSelectedRooms([]);
-          setTimeout(() => {
-            onSearchClicked();
-          }, 500);
           }}/>
       </div>
       <div className={style.section}>
@@ -81,9 +82,6 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
           setCheckout(e.target.value);
           setTo(e.target.value);
           setSelectedRooms && setSelectedRooms([]);
-          setTimeout(() => {
-            onSearchClicked();
-          }, 500);
         }}
         ref={checkoutRef}
         />
@@ -94,9 +92,6 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         defaultValue={roomtype}
         onChange={(e) => {
           setRoomtype(e.target.value);
-          setTimeout(() => {
-            onSearchClicked();
-          }, 500);
         }}>
           <option value="single">single bed</option>
           <option value="double">double bed</option>
