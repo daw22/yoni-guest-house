@@ -69,7 +69,11 @@
 }
 
 @media (max-width: 580) {
-  .card {
+  .cardsContainer {
     width: 90%;
+  }
+
+  .card{
+    width: 100%;
   }
 }
