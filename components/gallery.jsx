@@ -43,6 +43,7 @@ export default function Gallery() {
       }
       setPerPage(slideNum);
     }
+    handleResize();
     window.addEventListener('resize', hadleResize);
     return ()=> window.removeEventListener('resize', hadleResize);
   },[]);
