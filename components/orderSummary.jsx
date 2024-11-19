@@ -1,10 +1,14 @@
 'use client';
 import style from '@/styles/order.summary.module.css';
 import { FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
 
 function OrderSummary({checkin, checkout, singles, doubles, totalPrice, setShowOrderSummary, formData, rooms}) {
 
+  const [disableBtn, setDisableBtn] = useState(false);
+
   const handleConfirm = () => {
+    setDisableBtn(true);
     const bookingData = {
       ...formData,
       rooms: rooms,
@@ -34,6 +38,7 @@ function OrderSummary({checkin, checkout, singles, doubles, totalPrice, setShowO
     })
     .catch(error => {
       alert("Failed to book, Try again later");
+      setDisableBtn(false);
       console.error('Error booking:', error);
     });
   }
@@ -65,7 +70,7 @@ function OrderSummary({checkin, checkout, singles, doubles, totalPrice, setShowO
         </div>
         <div className={style.buttonContainer}>
           <button className={style.cancelButton} onClick={() => setShowOrderSummary(false)}>Cancel</button>
-          <button className={style.confirmButton} onClick={handleConfirm}>Confirm and pay</button>
+          <button className={style.confirmButton} disabled={disableBtn} onClick={handleConfirm}>Confirm and pay</button>
         </div>
       </div>
     </div>
