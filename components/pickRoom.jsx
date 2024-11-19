@@ -47,7 +47,7 @@ function PickRoom({ setRooms, rooms, checkin, checkout, roomtype, placeHolder, s
             if(e.target.checked){
               setSelectedRooms(prev => [...prev, room]);
             } else {
-              setSelectedRooms(prev => prev.filter(room => room.room_number !== room.room_number));
+              setSelectedRooms(prev => prev.filter(selectedRoom => selectedRoom.room_number !== room.room_number));
             }
           }}
           />
