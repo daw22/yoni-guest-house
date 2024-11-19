@@ -32,7 +32,7 @@ export default function Gallery() {
     },
   };
   useEffect(() => {
-    const hadleResize = () => {
+    const handleResize = () => {
       let slideNum;
       if(window.innerWidth > 980) {
         slideNum = 3;
@@ -44,8 +44,8 @@ export default function Gallery() {
       setPerPage(slideNum);
     }
     handleResize();
-    window.addEventListener('resize', hadleResize);
-    return ()=> window.removeEventListener('resize', hadleResize);
+    window.addEventListener('resize', handleResize);
+    return ()=> window.removeEventListener('resize', handleResize);
   },[]);
   return (
     <section className={style.container} id='gallery'>
