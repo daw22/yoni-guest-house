@@ -12,6 +12,9 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
   const checkoutRef = useRef(null);
 
   const addDate = (date, wh) => {
+    if(!date.getTime()){
+      return new Date(new Date().getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    }
     return new Date(date.getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
   }
 
@@ -65,6 +68,8 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         onInput={(e)=>{
           if(e.target.value === ""){
             console.log("invalid date");
+            e.target.value = addDate(new Date(), 0);
+            e.preventDefault();
             return;
           }
         }}
@@ -89,6 +94,8 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         onInput={(e)=>{
           if(e.target.value === ""){
             console.log("invalid date");
+            e.target.value = addDate(new Date(checkin), 1);
+            e.preventDefault();
             return;
           }
         }}
