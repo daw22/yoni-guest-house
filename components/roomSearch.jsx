@@ -66,6 +66,7 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
           if(e.target.value === ""){
             setCheckin(addDate(new Date(), 0));
             setFrom && setFrom(addDate(new Date(), 0));
+            setSelectedRooms && setSelectedRooms([]);
           }
         }}
         onChange={(e) => {
@@ -90,6 +91,7 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
           if(e.target.value === ""){
             setCheckout(addDate(new Date(checkin), 1));
             setTo && setTo(addDate(new Date(checkin), 1));
+            setSelectedRooms && setSelectedRooms([]);
           }
         }}
         onChange={(e) => {
