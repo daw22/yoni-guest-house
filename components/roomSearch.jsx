@@ -62,6 +62,12 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         min={addDate(new Date(), 0)} 
         max={addDate(new Date(), 30)}
         defaultValue={addDate(new Date(checkin), 0)}
+        onInput={(e)=>{
+          if(e.target.value === ""){
+            setCheckin(addDate(new Date(), 0));
+            setFrom && setFrom(addDate(new Date(), 0));
+          }
+        }}
         onChange={(e) => {
           setCheckin(e.target.value);
           setFrom && setFrom(e.target.value);
@@ -80,6 +86,12 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         min={ addDate(new Date(checkin), 1)} 
         max={addDate(new Date(checkout), 30)} 
         defaultValue={addDate(new Date(checkout), 0)}
+        onInput={(e)=>{
+          if(e.target.value === ""){
+            setCheckout(addDate(new Date(checkin), 1));
+            setTo && setTo(addDate(new Date(checkin), 1));
+          }
+        }}
         onChange={(e) => {
           setCheckout(e.target.value);
           setTo && setTo(e.target.value);
