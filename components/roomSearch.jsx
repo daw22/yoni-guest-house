@@ -64,12 +64,12 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         defaultValue={addDate(new Date(checkin), 0)}
         onChange={(e) => {
           setCheckin(e.target.value);
-          setFrom(e.target.value);
+          setFrom && setFrom(e.target.value);
           checkoutRef.current.min = addDate(new Date(e.target.value), 1);
           checkoutRef.current.value = addDate(new Date(e.target.value), 1);
           checkoutRef.current.max = addDate(new Date(e.target.value), 30);
           setCheckout(addDate(new Date(e.target.value), 1));
-          setTo(addDate(new Date(e.target.value), 1));
+          setTo && setTo(addDate(new Date(e.target.value), 1));
           setSelectedRooms && setSelectedRooms([]);
           }}/>
       </div>
@@ -82,7 +82,7 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         defaultValue={addDate(new Date(checkout), 0)}
         onChange={(e) => {
           setCheckout(e.target.value);
-          setTo(e.target.value);
+          setTo && setTo(e.target.value);
           setSelectedRooms && setSelectedRooms([]);
         }}
         ref={checkoutRef}
