@@ -46,8 +46,8 @@ function OrderSummary({checkin, checkout, singles, doubles, totalPrice, setShowO
         </div>
         <h3>Order Summary</h3>
         <div className={style.orderDetails}>
-          <p>Check-in Date: {new Date(checkin).toLocaleString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}, 10am EAT</p>
-          <p>Check-out Date: {new Date(checkout).toLocaleString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})} 10am EAT</p>
+          <p>Check-in Date: {new Date(checkin).toLocaleString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}, after 10:30 am EAT</p>
+          <p>Check-out Date: {new Date(checkout).toLocaleString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})} before10am EAT</p>
           <br />
           <p>Single bed rooms: {singles.length}</p>
           <p>Double bed rooms: {doubles.length}</p>
