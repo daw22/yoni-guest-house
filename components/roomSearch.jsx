@@ -64,7 +64,7 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         type='date'
         min={addDate(new Date(), 0)} 
         max={addDate(new Date(), 30)}
-        defaultValue={checkin || addDate(new Date(checkin), 0)}
+        value={checkin || addDate(new Date(checkin), 0)}
         onInput={(e)=>{
           if(e.target.value === ""){
             console.log("invalid date");
@@ -90,7 +90,7 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
         type='date'
         min={addDate(new Date(checkin), 1)} 
         max={addDate(new Date(checkout), 30)} 
-        defaultValue={checkout || addDate(new Date(checkout), 0)}
+        value={checkout || addDate(new Date(checkout), 0)}
         onInput={(e)=>{
           if(e.target.value === ""){
             console.log("invalid date");
