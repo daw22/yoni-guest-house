@@ -3,6 +3,7 @@ import style from '@/styles/search.module.css';
 import { FaSearch } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
+import { addDate } from '@/utils/date';
 
 function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHolder, setFrom, setTo, setSelectedRooms}) {
   const router = useRouter();
@@ -11,12 +12,12 @@ function RoomSearch({ setRooms, checkIn, checkOut, roomType, inForm, setPlaceHol
   const [roomtype, setRoomtype] = useState(roomType);
   const checkoutRef = useRef(null);
 
-  const addDate = (date, wh) => {
-    if(!date.getTime()){
-      return new Date(new Date().getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-    }
-    return new Date(date.getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-  }
+  // const addDate = (date, wh) => {
+  //   if(!date.getTime()){
+  //     return new Date(new Date().getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+  //   }
+  //   return new Date(date.getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+  // }
 
   const onSearchClicked = () => {
     if (inForm) {
