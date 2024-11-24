@@ -4,11 +4,8 @@ import Image from 'next/image';
 import RoomSearch from './roomSearch';
 import ActionBtn from './actionBtn';
 import coridor from '@/public/coridor01.jpg';
-
+import { addDate } from '@/utils/date';
 function Header() {
-  const addDate = (date, wh) => {
-    return new Date(date.getTime() + wh * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-  }
   return (
     <div className={style.container}>
       <Navbar />
