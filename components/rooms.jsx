@@ -1,3 +1,4 @@
+'use client'
 import style from '@/styles/rooms-section.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,7 +7,6 @@ import double from '@/public/double01.jpg';
 
 function Rooms() {
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
 
